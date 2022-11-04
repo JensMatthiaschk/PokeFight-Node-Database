@@ -10,5 +10,12 @@ export function getOnePokemon(req, res) {
 }
 
 export function getOnePokemonsCategory(req, res) {
-    const { name, type, base } = req.params;
+    database.map(entry => {
+        if (req.params.info == 'name') { res.send(entry.name) }
+        else if (req.params.info == 'type') { res.send(entry.type) }
+        else if (req.params.info == 'base') { res.send(entry.base) }
+        else { res.send(`pokemon doesn't have a key called ${req.params.info}`) }
+    })
+
+
 }
