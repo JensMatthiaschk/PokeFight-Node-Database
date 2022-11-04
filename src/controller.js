@@ -16,6 +16,4 @@ export function getOnePokemonsCategory(req, res) {
         else if (req.params.info == 'base') { res.send(entry.base) }
         else { res.send(`pokemon doesn't have a key called ${req.params.info}`) }
     })
-
-
 }
