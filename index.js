@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 server.use(cors())
 server.use(express.json())
-server.use('/Pokemon', PokeRouter)
+server.use('/pokemon', PokeRouter)
 
 server.listen(port, () => console.log(`server listens on http://localhost:${port}`))
 

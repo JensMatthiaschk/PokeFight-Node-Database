@@ -10,10 +10,8 @@ export function getOnePokemon(req, res) {
 }
 
 export function getOnePokemonsCategory(req, res) {
-    database.map(entry => {
-        if (req.params.info == 'name') { res.send(entry.name) }
-        else if (req.params.info == 'type') { res.send(entry.type) }
-        else if (req.params.info == 'base') { res.send(entry.base) }
-        else { res.send(`pokemon doesn't have a key called ${req.params.info}`) }
-    })
+    console.log(req.params.id, req.params.info)
+    const poke = database[req.params.id - 1]
+    const requestedSubfield = poke[req.params.info]
+    res.json({ requestedSubfield })
 }
